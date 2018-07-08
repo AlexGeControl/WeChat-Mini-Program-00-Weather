@@ -1,0 +1,29 @@
+/**index.wxss**/
+.weather-wrapper {
+  position: relative;
+  padding-top: 174rpx;
+  padding-bottom: 250rpx;
+}
+
+.temp {
+  line-height: 280rpx;
+  text-align: center;
+  font-size: 200rpx;
+  opacity: 0.8;
+}
+
+.weather-title {
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 40rpx;
+  opacity: 0.65;
+}
+
+.weather-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}

@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="weather-wrapper">
+  <view class="temp">
+    32℃
+  </view>
+  <view class="weather-title">
+    晴
+  </view>
+  <image class="weather-background" mode="scaleToFill" src="/resources/weather/sunny-bg.png"></image>
+</view>
