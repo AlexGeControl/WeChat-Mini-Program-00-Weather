@@ -8,6 +8,11 @@
     {{now.weather}}
   </view>
   <image class="weather-background" mode="scaleToFill" src="{{now.background}}"></image>
+  <view class="today-container">
+    <view class="today-date">{{today.date}}</view>
+    <view class="today-temp-range">{{today.tempRange}}</view>
+    <image class="today-icon" src="/resources/images/today/arrow.png"></image>
+  </view>
 </view>
 <!--天气预报标题栏-->
 <view class="timetips">

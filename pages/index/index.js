@@ -11,7 +11,12 @@ Page(
         weather: "晴",
         background: "/resources/images/weather/sunny-bg.png"
       },
-      forecasts: []
+      forecasts: [],
+      today: {
+        date: "",
+        minTemp: 0,
+        maxTemp: 0
+      }
     },
     // 功能函数: 更新当前天气
     setNow(now) {
@@ -79,6 +84,24 @@ Page(
         }
       );
     },
+    // 功能函数: 更新今日最高最低气温
+    setMinMaxTemp(today) {
+      let now = new Date();
+
+      // 日期:
+      let date = `今日 ${now.getFullYear()}-${now.getMonth() + 1}-${now.getDay() + 1}`;
+      // 最高最低气温:
+      let tempRange = `${today.minTemp}℃ - ${today.maxTemp}℃`;
+
+      this.setData(
+        {
+          today: {
+            date: date,
+            tempRange: tempRange
+          }
+        }
+      )
+    },
     // 功能函数: 更新天气显示
     getNow(completeCallback) {
       wx.request(
@@ -97,6 +120,9 @@ Page(
             this.setNow(result.now);
             // 更新天气预报:
             this.setForecasts(result.forecast);
+            // 更新今日最高最低气温:
+            this.setMinMaxTemp(result.today);
+            console.log(result);
           },
           complete: () => {
             completeCallback && completeCallback();
