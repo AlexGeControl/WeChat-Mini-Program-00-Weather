@@ -1,18 +1,18 @@
 /**index.wxss**/
-.weather-wrapper {
+.weather-container {
   position: relative;
   padding-top: 174rpx;
   padding-bottom: 250rpx;
 }
 
-.temp {
+.weather-temp {
   line-height: 280rpx;
   text-align: center;
   font-size: 200rpx;
   opacity: 0.8;
 }
 
-.weather-title {
+.weather-weather {
   line-height: 56rpx;
   text-align: center;
   font-size: 40rpx;
@@ -26,4 +26,56 @@
   height: 100%;
   width: 100%;
   z-index: -1;
+}
+
+.timetips {
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timetips-icon {
+  order: 0;
+  margin-right: 10rpx;
+  height: 28rpx;
+  width: 36rpx;
+}
+
+.timetips-text {
+  order: 1;
+  line-height: 42rpx;
+  font-size: 30rpx;
+  opacity: 0.5;
+}
+
+.forecast-list {
+  display: flex;
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  width: 150rpx;
+}
+
+.forecast-time {
+  line-height: 42rpx;
+  font-size: 30rpx;
+}
+
+.forecast-weather {
+  margin-top: 40rpx;
+  width: 90rpx;
+  height: 90rpx;
+}
+.forecast-temp {
+  text-align: center;
+  line-height: 56rpx;
+  font-size: 40rpx;
 }

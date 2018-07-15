@@ -1,10 +1,26 @@
 <!--index.wxml-->
-<view class="weather-wrapper">
-  <view class="temp">
+<!--当前天气-->
+<view class="weather-container">
+  <view class="weather-temp">
     {{now.temp}}℃
   </view>
-  <view class="weather-title">
+  <view class="weather-weather">
     {{now.weather}}
   </view>
-  <image class="weather-background" mode="scaleToFill" src="/resources/weather/sunny-bg.png"></image>
+  <image class="weather-background" mode="scaleToFill" src="{{now.background}}"></image>
 </view>
+<!--天气预报标题栏-->
+<view class="timetips">
+  <image class="timetips-icon" src="/resources/images/forecast/time-icon.png"></image>
+  <view class="timetips-text">未来24小时天气预报</view>
+</view>
+<!--天气预报项目-->
+<scroll-view scroll-x>
+  <view class="forecast-list">
+    <view class="forecast-item" wx:for="{{forecasts}}" wx:key="id" wx:for-item="forecast">
+      <view class="forecast-time">{{forecast.time}}</view>
+      <image class="forecast-weather" src="{{forecast.icon}}"></image>
+      <view class="forecast-temp">{{forecast.temp}}℃</view>
+    </view>
+  </view>
+</scroll-view>
